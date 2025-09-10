@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AreaProtegidaController;
 
-Route::view('/', 'welcome');
+Route::redirect('/', '/login');
+
+Route::resource('areaprotegida', AreaProtegidaController::class);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
