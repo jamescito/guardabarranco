@@ -64,7 +64,11 @@
 
 
 
- <div class="bg-green-800 border-t border-smoke px-8 py-4 bg-gray text-white mt-12 rounded-lg">
+
+
+</x-app-layout>
+
+ <div class="bg-green-800 border-t border-smoke px-8 py-4 bg-gray text-white ">
   <div class="flex justify-center text-grey">
             Todos los derechos reservado
   </div>
@@ -79,8 +83,3 @@
   </div>
 
 </div>
-
-
-
-
-</x-app-layout>

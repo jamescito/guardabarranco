@@ -24,6 +24,8 @@
     </div>
 
     
+
+</x-app-layout>
  <div class="bg-green-800 border-t border-smoke px-8 py-4  text-white mt-0 rounded-lg">
   <div class="flex justify-center text-grey">
             Todos los derechos reservado
@@ -39,5 +41,3 @@
   </div>
 
 </div>
-
-</x-app-layout>

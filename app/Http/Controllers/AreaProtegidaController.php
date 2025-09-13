@@ -75,8 +75,10 @@ class AreaProtegidaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AreaProtegida $areaProtegida)
+    public function destroy(string $id)
     {
-        //
-    }
+        $areaProtegida = AreaProtegida::findOrFail($id);
+        $areaProtegida->delete();
+        return redirect()->route('areaprotegida.index');
+    }   
 }

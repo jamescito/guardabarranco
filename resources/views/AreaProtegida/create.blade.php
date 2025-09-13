@@ -57,6 +57,7 @@
 
 
 
+</x-app-layout>
 
 
  <div class="bg-green-800 border-t border-smoke px-8 py-4 bg-gray text-white ">
@@ -74,8 +75,3 @@
   </div>
 
 </div>
-
-
-
-
-</x-app-layout>
