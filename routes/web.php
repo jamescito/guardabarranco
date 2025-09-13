@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AreaProtegidaController;
+use App\Http\Controllers\ReservaNaturalController;
 
 Route::redirect('/', '/login');
 
 Route::resource('areaprotegida', AreaProtegidaController::class);
+Route::resource('reservanatural', ReservaNaturalController::class);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

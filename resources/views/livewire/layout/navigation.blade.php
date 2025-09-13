@@ -37,7 +37,13 @@ new class extends Component
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex  rounded-lg">
                     <x-nav-link :href="route('areaprotegida.index')" :active="request()->routeIs('areaprotegida')" wire:navigate>
-                        {{ __('Area protegida') }}
+                        {{ __('AREAS PROTEGIDAS') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex  rounded-lg">
+                    <x-nav-link :href="route('reservanatural.index')" :active="request()->routeIs('reservanatural')" wire:navigate>
+                        {{ __('RESERVA NATURALES ') }}
                     </x-nav-link>
                 </div>
 
