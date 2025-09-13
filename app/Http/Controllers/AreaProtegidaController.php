@@ -44,23 +44,32 @@ class AreaProtegidaController extends Controller
      */
     public function show(AreaProtegida $areaProtegida)
     {
-        //
+     
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AreaProtegida $areaProtegida)
+    public function edit(string $id)
     {
-        //
+        $areaProtegida = AreaProtegida::findOrFail($id);
+        return view('AreaProtegida.edit', compact('areaProtegida'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AreaProtegida $areaProtegida)
+    public function update(Request $request, $id)
     {
-        //
+           $validated = $request->validate([
+            'nombre' => 'required|string|max:255',
+            'ubicacion'=>'required|string|max:255',
+            'descripcion'=>'required|string|max:255',
+        ]);
+
+        $areaProtegida = AreaProtegida::findOrFail($id);
+        $areaProtegida->update($validated);
+        return redirect()->route('areaprotegida.index')->with('success', 'Área Protegida actualizada exitosamente.');
     }
 
     /**

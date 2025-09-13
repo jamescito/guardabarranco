@@ -29,17 +29,17 @@
                                          <th class="px-6 py-3 text-left text-sm font-semibold text-white"></th>
                                     </tr>
                                 </thead>
-                                <tbody class="divide-y divide-gray-200">
+                                <tbody class="divide-y divide-gray-200 rounded-lg">
                                     @foreach ($areaProtegida as $area)
-                                        <tr class="hover:bg-gray-50">
+                                        <tr class="hover:bg-gray-50 rounded-lg">
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $area->id }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $area->nombre }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $area->descripcion }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $area->ubicacion }}</td>
 
-                                            <td class="px-6 py-4 text-center bg-white space-nowrap text-sm font-medium plaholder">
-                                                <button
-                                                    class="px-3 py-1 text-sm text-black bg-blue-700 rounded-lg hover:bg-blue-600">Editar</button>
+                                            <td class="px-6 py-4 text-center bg-green-200 space-nowrap text-sm font-medium plaholder">
+                                                <a href= "{{ route('areaprotegida.edit', $area->id) }}"
+                                                    class="px-3 py-1 text-sm text-black bg-blue-700 rounded-lg hover:bg-blue-600">Editar</a>
                                                 <button
                                                     class="px-3 py-1 text-sm text-black bg-red-500 rounded-lg hover:bg-red-600">Eliminar</button>
                                             </td>
@@ -56,4 +56,46 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+ <div class="bg-green-800 border-t border-smoke px-8 py-4  text-white ">
+  <div class="flex justify-center text-grey">
+            Todos los derechos reservado
+  </div>
+   <div class="flex justify-center text-grey">
+           ING. James Alberth Reyes Calderon
+  </div>
+  <div class="flex justify-center text-grey">
+            jr76407900@gmail.com
+  </div>
+  <div class="flex justify-center text-grey">
+         <a href="https://www.linkedin.com/in/james-reyes-calderon-46534a225/" class="">Linkedin</a>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </x-app-layout>
