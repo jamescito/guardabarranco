@@ -52,24 +52,36 @@ class EspecieController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Especie $especie)
+    public function edit(string $id)
     {
-        //
+        $especies = Especie::findOrfail($id);
+        return view('Especie.edit', compact('especies'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Especie $especie)
+    public function update(Request $request, $id)
     {
-        //
-    }
+       
+        $valited = $request->validate([
+            'nombre_comun' => 'required|string|max:255',
+            'nombre_cientifico' => 'required|string|max:255',
+            'tipo' => 'required|string|max:100',
+            'area_protegida_id' => 'required|exists:areas_protegidas,id',
+           
+           ]);
+        
+        $especie = Especie::findOrFail($id);
+        $especie->update($valited);
+        return redirect()->route('especie.index')->with('success', 'Especie actualizada exitosamente.');
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Especie $especie)
+    }
+    
+    public function destroy( string $id)
     {
-        //
+        $especies = Especie::findOrfail($id);
+        $especies->delete();
+        return redirect()->route('especie.index');
     }
 }

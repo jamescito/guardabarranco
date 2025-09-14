@@ -70,12 +70,12 @@
 
 <script>
    function confirmDelete(id) {
-    alertify.defaults.glossary.title = "Eliminar área protegida";
+    alertify.defaults.glossary.title = "Eliminar Especies"; // Cambia el título del diálogo
     alertify.confirm("¿Está seguro que desea eliminar?",
         function () {
             let form = document.createElement('form');
             form.method = 'POST';
-            form.action = '/areaprotegida/' + id;
+            form.action = '/especie/' + id;
 
             // CSRF token
             let csrf = document.createElement('input');
