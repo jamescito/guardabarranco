@@ -40,7 +40,7 @@
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $reserva->area_protegida_id }}</td>
 
                                             <td class="px-6 py-4 text-center bg-green-200 space-nowrap text-sm font-medium plaholder">
-                                                <a href= "{{ route('areaprotegida.edit', $reserva->id) }}"
+                                                <a href= "{{ route('reservanatural.edit', $reserva->id) }}"
                                                     class="px-3 py-1 text-sm text-black bg-blue-700 rounded-lg hover:bg-blue-600">Editar</a>
                                                 <button onclick="confirmDelete({{ $reserva->id }})" type="button"  
                                                     class="px-3 py-1 text-sm text-black bg-red-500 rounded-lg hover:bg-red-600">Eliminar</button>

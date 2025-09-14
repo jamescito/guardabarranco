@@ -62,17 +62,18 @@ class ReservaNaturalController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         $validar = $request->validate([
             'nombre' => 'required|string|max:255',
             'estado' => 'required|string|max:255',
             'descripcion' => 'nullable|string',
+            'area_protegida_id' => 'required|exists:areas_protegidas,id',
         ]);
 
         $reservaNatural = ReservaNatural::findOrFail($id);
         $reservaNatural->update($validar);
-        return view('ReservaNatural.index')->with('success', 'Reserva Natural actualizada exitosamente.');
+        return redirect()->route('reservanatural.index')->with('success', 'Reserva Natural actualizada exitosamente.');
     }
 
     /**
