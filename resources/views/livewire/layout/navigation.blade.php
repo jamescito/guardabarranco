@@ -46,7 +46,12 @@ new class extends Component
                         {{ __('RESERVA NATURALES ') }}
                     </x-nav-link>
                 </div>
-
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex  rounded-lg">
+                    <x-nav-link :href="route('especie.index')" :active="request()->routeIs('especie')" wire:navigate>
+                        {{ __('ESPECIES DE AVES') }}
+                    </x-nav-link>
+                
+                
 
 
             </div>

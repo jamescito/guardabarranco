@@ -12,7 +12,8 @@ class EspecieController extends Controller
      */
     public function index()
     {
-        //
+        $especies = Especie::all();
+        return view('Especie.index', compact('especies'));
     }
 
     /**
@@ -20,7 +21,7 @@ class EspecieController extends Controller
      */
     public function create()
     {
-        //
+        return view('Especie.create');
     }
 
     /**
@@ -28,7 +29,16 @@ class EspecieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valited = $request->validate([
+            'nombre_comun' => 'required|string|max:255',
+            'nombre_cientifico' => 'required|string|max:255',
+            'tipo' => 'required|string|max:100',
+            'area_protegida_id' => 'required|exists:areas_protegidas,id',
+           
+           ]);
+
+        Especie::create($valited);
+        return redirect()->route('especie.index')->with('success', 'Especie creada exitosamente.');
     }
 
     /**
