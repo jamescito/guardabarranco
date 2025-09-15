@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ReservaNatural;
+use App\Models\AreaProtegida;
 use Illuminate\Http\Request;
 
 class ReservaNaturalController extends Controller
@@ -14,6 +15,8 @@ class ReservaNaturalController extends Controller
     {
         $reservaNatural = ReservaNatural::all();
         return view('ReservaNatural.index', compact('reservaNatural'));
+
+     
     }
 
     /**
@@ -21,8 +24,19 @@ class ReservaNaturalController extends Controller
      */
     public function create()
     {
+           $areas = AreaProtegida::all(); // Trae todas las áreas protegidas
+        return view('ReservaNatural.create', compact('areas'));
+
         return view('ReservaNatural.create');
+
     }
+
+    public function buscar(Request $request)
+   {
+      $query = $request->input('q');
+      $areas = AreaProtegida::where('nombre', 'like', "%$query%")->limit(20)->get();
+      return response()->json($areas);
+   }
 
     /**
      * Store a newly created resource in storage.

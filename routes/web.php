@@ -13,6 +13,7 @@ Route::resource('areaprotegida', AreaProtegidaController::class);
 Route::resource('reservanatural', ReservaNaturalController::class);
 Route::resource('especie', App\Http\Controllers\EspecieController::class);
 Route::resource('operadorlocal', App\Http\Controllers\OperadorLocalController::class);
+Route::get('/api/areas', [AreaProtegidaController::class, 'buscar']);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

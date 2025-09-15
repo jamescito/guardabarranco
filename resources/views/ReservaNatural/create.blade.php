@@ -5,7 +5,12 @@
         </h2>
     </x-slot>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- CSS de Select2 -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+<!-- JS de Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-12 bg-green-200 p-6 rounded-lg">
         <div class="overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 bg-white-200 rpounded-lg">
@@ -27,10 +32,17 @@
                         <input type="text" name="descripcion" placeholder="DESCRIPCION"
                             class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </div>
-                    <div class=" mb-5">
-                        <input type="text" name="area_protegida_id" placeholder="area_protegida_id"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
+                    
+                    <div class=" mb-5">
+                        <select name="area_protegida_id" id="area_protegida_id" 
+                            class=" select2 w-full border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">Seleccione un área</option>
+                            @foreach ($areas as $area)
+                                 <option value="{{ $area->id }}">{{ $area->nombre }}</option>
+
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class=" mb-5">
@@ -60,6 +72,15 @@
 
 
 </x-app-layout>
+
+<script>
+    $(document).ready(function() {
+        $('#area_protegida_id').select2({
+            placeholder: 'Seleccione un área protegida',
+            allowClear: true
+        });
+    });
+</script>
 
 
 <div class="bg-green-800 border-t border-smoke px-8 py-4 bg-gray text-white ">
