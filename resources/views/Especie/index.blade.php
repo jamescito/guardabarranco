@@ -25,7 +25,7 @@
                                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">ID</th>
                                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">Nombre comun</th>
                                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">Nombre cientifico</th>
-                                        <th class="px-6 py-3 text-left text-sm font-semibold text-white">tipo</th>
+                                        <th class="px-6 py-3 text-left text-sm font-semibold text-white">Familia</th>
                                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">Area protegida</th>
                                          <th class="px-6 py-3 text-left text-sm font-semibold text-white"></th>
                                     </tr>
@@ -37,7 +37,7 @@
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $especie->nombre_comun }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $especie->nombre_cientifico }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $especie->tipo }}</td>
-                                            <td class="px-6 py-4 text-sm text-gray-600">{{ $especie->area_protegida_id }}</td>
+                                            <td class="px-6 py-4 text-sm text-gray-600">{{ $especie->areaProtegida->nombre ?? 'Sin area asignada' }}</td>
 
                                             <td class="px-6 py-4 text-center bg-green-200 space-nowrap text-sm font-medium plaholder">
                                                 <a href= "{{ route('especie.edit', $especie->id) }}"

@@ -37,7 +37,7 @@
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $reserva->nombre }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $reserva->estado }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $reserva->descripcion }}</td>
-                                            <td class="px-6 py-4 text-sm text-gray-600">{{ $reserva->area_protegida_id }}</td>
+                                            <td class="px-6 py-4 text-sm text-gray-600">{{ $reserva->areaProtegida->nombre ?? 'Sin área asignada'}}</td>
 
                                             <td class="px-6 py-4 text-center bg-green-200 space-nowrap text-sm font-medium plaholder">
                                                 <a href= "{{ route('reservanatural.edit', $reserva->id) }}"

@@ -13,7 +13,7 @@ class AreaProtegida extends Model
 
       public function ReservasNaturales()
     {
-        return $this->hasMany(ReservaNatural::class, 'reserva_natural_id');
+        return $this->hasMany(ReservaNatural::class, 'area_protegida_id');
     }
 
     public function especies()
