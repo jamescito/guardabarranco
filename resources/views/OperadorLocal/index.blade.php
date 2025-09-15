@@ -73,12 +73,12 @@
 
 <script>
    function confirmDelete(id) {
-    alertify.defaults.glossary.title = "Eliminar Reserva Natural";
+    alertify.defaults.glossary.title = "Eliminar Operador Local";
     alertify.confirm("¿Está seguro que desea eliminar?",
         function () {
             let form = document.createElement('form');
             form.method = 'POST';
-            form.action = '/reservanatural/' + id;
+            form.action = '/operadorlocal/' + id;
 
             // CSRF token
             let csrf = document.createElement('input');

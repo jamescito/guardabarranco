@@ -81,8 +81,10 @@ class OperadorLocalController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OperadorLocal $operadorLocal)
+    public function destroy(string $id)
     {
-        //
+        $operadorLocal = OperadorLocal::findOrFail($id);
+        $operadorLocal->delete();
+        return redirect()->route('operadorlocal.index')->with('success', 'Operador Local eliminado exitosamente.');
     }
 }
