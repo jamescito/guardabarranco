@@ -66,7 +66,7 @@ class OperadorLocalController extends Controller
     public function update(Request $request, $id)
     {
         $validate = $request->validate([
-            'cedula' => 'required|unique:operador_local,cedula,'.$id,
+            'cedula' => 'required|string|max:255|unique:operador_local,cedula,' . $id,
             'nombre' => 'required',
             'apellido' => 'required',
             'telefono' => 'required',
