@@ -36,7 +36,7 @@ class AreaProtegidaController extends Controller
         ]);
 
         AreaProtegida::create($validated);
-        return redirect('AreaProtegida.index')->with('success', 'Área Protegida creada exitosamente.');
+        return redirect()->route('areaprotegida.index')->with('success', 'Área Protegida creada exitosamente.');
     }
 
     /**
