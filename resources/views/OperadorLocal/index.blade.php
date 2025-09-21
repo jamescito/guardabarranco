@@ -23,6 +23,7 @@
                                 <thead class="bg-green-500">
                                     <tr class="text-white">
                                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">ID</th>
+                                        <th class="px-6 py-3 text-left text-sm font-semibold text-white">CEDULA</th>
                                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">NOMBRE</th>
                                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">Apellido</th>
                                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">Telefono</th>

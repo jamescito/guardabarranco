@@ -4,6 +4,7 @@
             {{ __('RESERVA NATURAL') }}
         </h2>
     </x-slot>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -15,11 +16,11 @@
                      <a href="{{ route('reservanatural.create') }}"class=" bg-green-700 px-3 py-1 text-sm text-white rounded-lg hover:bg-green-600">Crear Reserva Natural</a>
                     <div class="flex justify-center bg-red-500d">
                         <div class="cw-full max-w-4xl">
-                            <h1 text-xl font-bold text-white>Lista de Reserva Natural</h1>
+                          
                            
                            
 
-                            <table class="table table-bordered mt-4 border-2 rounded-full bg-green-200">
+                            <table class="table table-bordered mt-4 border-2 rounded-full bg-green-200 font-inter">
                                 <thead class="bg-green-500">
                                     <tr class="text-white">
                                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">ID</th>
@@ -39,7 +40,7 @@
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $reserva->descripcion }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-600">{{ $reserva->areaProtegida->nombre ?? 'Sin área asignada'}}</td>
 
-                                            <td class="px-6 py-4 text-center bg-green-200 space-nowrap text-sm font-medium plaholder">
+                                            <td class="px-6 py-4 text-center  space-nowrap text-sm font-medium plaholder">
                                                 <a href= "{{ route('reservanatural.edit', $reserva->id) }}"
                                                     class="px-3 py-1 text-sm text-black bg-blue-700 rounded-lg hover:bg-blue-600">Editar</a>
                                                 <button onclick="confirmDelete({{ $reserva->id }})" type="button"  

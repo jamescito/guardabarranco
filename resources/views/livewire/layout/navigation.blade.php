@@ -29,7 +29,7 @@ new class extends Component
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex  rounded-lg">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex  rounded-lg font-sans">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
@@ -37,21 +37,21 @@ new class extends Component
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex  rounded-lg">
                     <x-nav-link :href="route('areaprotegida.index')" :active="request()->routeIs('areaprotegida')" wire:navigate>
-                        {{ __('AREAS PROTEGIDAS') }}
+                        {{ __('Areas protegida') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex  rounded-lg">
                     <x-nav-link :href="route('reservanatural.index')" :active="request()->routeIs('reservanatural')" wire:navigate>
-                        {{ __('RESERVA NATURALES ') }}
+                        {{ __('Reserva naturales ') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex  rounded-lg">
                     <x-nav-link :href="route('especie.index')" :active="request()->routeIs('especie')" wire:navigate>
-                        {{ __('ESPECIES DE AVES') }}
+                        {{ __('Especies de Aves') }}
                     </x-nav-link>
                 
-                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex  rounded-lg">
+                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex  rounded-lg font-sans">
                     <x-nav-link :href="route('operadorlocal.index')" :active="request()->routeIs('operadorlocal')" wire:navigate>
                         {{ __('Operador Local') }}
                     </x-nav-link>
