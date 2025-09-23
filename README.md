@@ -29,3 +29,48 @@ Este proyecto tiene como objetivo central facilitar la gestión integral de la b
 ##  Impacto esperado
 
 Este sistema no solo mejora la eficiencia operativa en la gestión de zonas protegidas, sino que también fortalece la gobernanza ambiental, la transparencia en el ecoturismo y la participación ciudadana informada. Su diseño modular permite escalarlo a nivel regional, integrando nuevas áreas, especies y actores conforme evoluciona el contexto de conservación.
+
+#  Guía de instalación y ejecución — Guardabarranco (Laravel + Livewire + Blade)
+
+## ✅ Requisitos del sistema
+
+
+| Componente         | Versión mínima 
+|--------------------|----------------
+| PHP                | 8.1+           
+| Composer           | 2.x            
+| Laravel Installer  | 5.x            
+| Node.js            | 18+            
+| npm                | 9+             
+| MySQL/MariaDB      | 5.7+ / 10.3+    
+
+---
+
+## 📦 Instalación del proyecto
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/jamescito/guardabarranco.git
+cd guardabarranco
+
+# Instalar dependencias PHP
+composer install
+
+# Instalar dependencias frontend
+
+
+npm install
+
+```
+
+## Configuración del entorno
+```bash
+# Copiar archivo de entorno
+cp .env.example .env
+
+# Generar clave de aplicación
+php artisan key:generate
+
+## Editar el archivo .env
+```
+
